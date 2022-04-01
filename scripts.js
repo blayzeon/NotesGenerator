@@ -7,10 +7,6 @@
 
 const form = [
     {
-        opening: false,
-        closing: false
-    },
-    {
         type: 'textarea',
         placeholder: 'scratchpad for jotting down information (not included in notes)',
         copy: false,
@@ -21,14 +17,23 @@ const form = [
         type: 'input',
         placeholder: 'your full name',
         copy: false,
-        reset: false
+        reset: false,
+        id: "rep-name"
     },
     {
         label: 'issue',
         type: 'input',
-        placeholder: 'the reasson for the customer\'s call',
+        placeholder: 'the reason for the customer\'s call',
         copy: true,
         reset: true
+    },
+    {
+        label: 'customer',
+        type: 'input',
+        placeholder: 'the customer\'s first and last name',
+        copy: true,
+        reset: true,
+        id: "customer-name"
     },
     {
         label: 'facility',
@@ -48,7 +53,8 @@ const form = [
         ],
         placeholder: "the Viapath product that the customer needs assistance with",
         copy: false,
-        reset: false
+        reset: false,
+        id: "product"
     },
     {
         label: 'resolution',
@@ -93,6 +99,10 @@ function createForm(itemArray){
             newInput.setAttribute('data', 'copy');
         }
 
+        if (itemArray[i].id){
+            newInput.setAttribute('id', itemArray[i].id);
+        }
+
         if (itemArray[i].options){
             for (let j = 0; j < itemArray[i].options.length; j += 1){
                 const newOption = document.createElement('option');
@@ -122,12 +132,48 @@ function createForm(itemArray){
             .filter((a) => a);
         let noteString = formValues.join(' / ');
 
-        if (itemArray[0].opening){
-            noteString = `${itemArray[0].opening} ${noteString}`;
+        if (noteString.length === 0){
+            // nothing to copy
+            return;
+        };
+
+        // customize the note
+        const product = document.querySelector('#product');
+        let opening = undefined;
+        let closing = undefined;
+        const rep = document.querySelector('#rep-name').value;
+        if (product.value === 'GettingOut'){
+            // customer's name for the start of the notes
+            const customer = document.querySelector('#customer-name').value;
+            const customerName = customer.split(' ');
+            opening = `as per ${customerName[0]}, `;
+
+            // rep initials for end of notes
+            const repName = rep.split(' ');
+            let repInitials = rep;
+            if (repName.length > 1){
+                repInitials = `${repName[0][0]}.${repName[1][0]}.`;
+            }
+
+            // current date for end of notes
+            const date = new Date();
+            const fDate = date.toLocaleDateString(undefined, {
+                year: "numeric",
+                month: "2-digit",
+                day: "2-digit",
+            });
+
+            closing = `${repInitials} ${fDate}`;
+        } else if (product.value === "VisManager"){
+            opening = `GTL/${rep}`;
         }
 
-        if (itemArray[0].closing){
-            noteString = `${noteString} ${itemArray[0].closing}`;
+        if (opening){
+            noteString = `${opening} ${noteString}`;
+        }
+
+        if (closing){
+            noteString = `${noteString} - ${closing}`;
         }
 
         copyStr(noteString);
@@ -157,3 +203,6 @@ function createForm(itemArray){
 const cnForm = createForm(form);
 const container = document.getElementById('main-left');
 container.appendChild(cnForm);
+
+const version = document.getElementById('version-number');
+version.innerText = '22.401';
