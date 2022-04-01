@@ -73,6 +73,7 @@ const cnItems = [
         placeholder: 'customer\'s 4-to-8-digit passcode',
         copy: true,
         reset: true,
+        insert: true
     },
 ];
 
@@ -81,15 +82,17 @@ const goItems = [
         label: 'email',
         type: 'input',
         placeholder: 'customer\'s email address',
-        copy: true,
+        copy: false,
         reset: true,
+        insert: true
     },
     {
         label: 'inmate',
         type: 'input',
         placeholder: 'the inmate\'s first and last name',
-        copy: true,
+        copy: false,
         reset: true,
+        insert: true
     },
 ];
 
@@ -100,13 +103,15 @@ const vmItems = [
         placeholder: 'the customer\'s date of birth',
         copy: false,
         reset: true,
+        insert: true
     },
     {
-        label: 'inmate id',
+        label: 'id',
         type: 'input',
         placeholder: 'the inmate\'s ID number',
-        copy: true,
+        copy: false,
         reset: true,
+        insert: true
     },
 ];
 
@@ -136,6 +141,10 @@ function createForm(itemArray, buttons=true){
         }
 
         const newInput = document.createElement(itemArray[i].type);
+        if (itemArray[i].insert){
+            formItem.setAttribute('data-insert', 'insert');
+        }
+
         if (itemArray[i].reset){
             newInput.setAttribute('data-reset', 'reset');
         }
@@ -158,6 +167,11 @@ function createForm(itemArray, buttons=true){
 
             newInput.addEventListener('change', ()=>{
                 let productItems = undefined;
+
+                const insertItems = document.querySelectorAll('[data-insert="insert"]');
+                insertItems.forEach((item) => {
+                    item.remove();
+                });
 
                 if (newInput.value === "ConnectNetwork"){
                     productItems = cnItems;
@@ -231,7 +245,7 @@ function createForm(itemArray, buttons=true){
 
             closing = `${repInitials} ${fDate}`;
         } else if (product.value === "VisManager"){
-            opening = `GTL/${rep}`;
+            opening = `GTL/${rep} -`;
         }
 
         if (opening){
