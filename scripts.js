@@ -61,7 +61,52 @@ const form = [
         type: 'input',
         placeholder: 'how you assisted the customer',
         copy: true,
-        reset: true
+        reset: true,
+        id: "resolution"
+    },
+];
+
+const cnItems = [
+    {
+        label: 'passcode',
+        type: 'input',
+        placeholder: 'customer\'s 4-to-8-digit passcode',
+        copy: true,
+        reset: true,
+    },
+];
+
+const goItems = [
+    {
+        label: 'email',
+        type: 'input',
+        placeholder: 'customer\'s email address',
+        copy: true,
+        reset: true,
+    },
+    {
+        label: 'inmate',
+        type: 'input',
+        placeholder: 'the inmate\'s first and last name',
+        copy: true,
+        reset: true,
+    },
+];
+
+const vmItems = [
+    {
+        label: 'dob',
+        type: 'input',
+        placeholder: 'the customer\'s date of birth',
+        copy: false,
+        reset: true,
+    },
+    {
+        label: 'inmate id',
+        type: 'input',
+        placeholder: 'the inmate\'s ID number',
+        copy: true,
+        reset: true,
     },
 ];
 
@@ -75,7 +120,7 @@ function copyStr(str){
     copyArea.remove();
 }
 
-function createForm(itemArray){
+function createForm(itemArray, buttons=true){
     const form = document.createElement('form');
 
     for (let i = 0; i < itemArray.length; i += 1){
@@ -110,6 +155,24 @@ function createForm(itemArray){
                 newOption.innerText = itemArray[i].options[j];
                 newInput.appendChild(newOption);
             }
+
+            newInput.addEventListener('change', ()=>{
+                let productItems = undefined;
+
+                if (newInput.value === "ConnectNetwork"){
+                    productItems = cnItems;
+                } else if (newInput.value === "GettingOut"){
+                    productItems = goItems;
+                } else if (newInput.value === "VisManager"){
+                    productItems = vmItems;
+                }
+
+                if (productItems === undefined) { return };
+
+                const newItem = createForm(productItems, false);
+                form.insertBefore(newItem, formItem.nextSibling);
+            });
+            
         } else if (itemArray[i].placeholder){
             newInput.setAttribute('placeholder', itemArray[i].placeholder);
         }
@@ -148,6 +211,9 @@ function createForm(itemArray){
             const customerName = customer.split(' ');
             opening = `as per ${customerName[0]}, `;
 
+            // main notes
+            noteString = `${document.querySelector('#resolution').value}`;
+
             // rep initials for end of notes
             const repName = rep.split(' ');
             let repInitials = rep;
@@ -179,23 +245,25 @@ function createForm(itemArray){
         copyStr(noteString);
     });
 
-    const resetBtn = document.createElement('button');
-    resetBtn.setAttribute('type', 'button');
-    resetBtn.innerText = 'reset';
-    formButtons.appendChild(resetBtn);
+    if (buttons === true){
+        const resetBtn = document.createElement('button');
+        resetBtn.setAttribute('type', 'button');
+        resetBtn.innerText = 'reset';
+        formButtons.appendChild(resetBtn);
 
-    form.appendChild(formButtons);
+        form.appendChild(formButtons);
 
-    resetBtn.addEventListener('click', ()=>{
-        // resets the items on the form based on data reset
-        const a = confirm('Would you like to reset this form?');
-        if (a) {
-            const resetItems = document.querySelectorAll('[data="reset"]');
-            resetItems.forEach((item)=>{
-                item.value = '';
-            });
-        };
-    });
+        resetBtn.addEventListener('click', ()=>{
+            // resets the items on the form based on data reset
+            const a = confirm('Would you like to reset this form?');
+            if (a) {
+                const resetItems = document.querySelectorAll('[data="reset"]');
+                resetItems.forEach((item)=>{
+                    item.value = '';
+                });
+            };
+        });
+    }
 
     return form;
 }
