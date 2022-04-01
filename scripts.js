@@ -137,11 +137,11 @@ function createForm(itemArray, buttons=true){
 
         const newInput = document.createElement(itemArray[i].type);
         if (itemArray[i].reset){
-            newInput.setAttribute('data', 'reset');
+            newInput.setAttribute('data-reset', 'reset');
         }
 
         if (itemArray[i].copy){
-            newInput.setAttribute('data', 'copy');
+            newInput.setAttribute('data-copy', 'copy');
         }
 
         if (itemArray[i].id){
@@ -190,7 +190,7 @@ function createForm(itemArray, buttons=true){
     formButtons.appendChild(copyBtn);
 
     copyBtn.addEventListener('click', ()=>{
-        const formValues = Array.from(document.querySelectorAll('[data="copy"]'))
+        const formValues = Array.from(document.querySelectorAll('[data-copy="copy"]'))
             .map((x) => {return x.value})
             .filter((a) => a);
         let noteString = formValues.join(' / ');
@@ -257,7 +257,7 @@ function createForm(itemArray, buttons=true){
             // resets the items on the form based on data reset
             const a = confirm('Would you like to reset this form?');
             if (a) {
-                const resetItems = document.querySelectorAll('[data="reset"]');
+                const resetItems = document.querySelectorAll('[data-reset="reset"]');
                 resetItems.forEach((item)=>{
                     item.value = '';
                 });
