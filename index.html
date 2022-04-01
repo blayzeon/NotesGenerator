@@ -9,89 +9,11 @@
 </head>
 <body>
     <div id="popup-div" class="hidden">Copied</div>
-    <nav class="margin-bottom"> 
-        <!-- Work links -->
-        <ul id="work-links" class="flex-list"></ul>
-    </nav>
+    <nav class="margin-bottom"></nav>
     <section class="main-content">
         <div class="container">
-            <div id="aside-menu-container" class="display-none">
-                <button type="button" id="aside-menu-close">Close</button>
-                <ul id="aside-content-menu-options"></ul>
-            </div>  
-            <div class="split">
-                <div class="split-left">
-                    <!-- Main notes form -->
-                    <form class="input-form">
-                        <div class="form-group">
-                            <label for="form-rep">Rep: </label>
-                            <input type="text" id="form-rep" placeholder="your full name">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="form-product">Product: </label>
-                            <select id="form-product">
-                                <option value="form-cn">ConnectNetwork</option>
-                                <option value="form-go">GettingOut</option>
-                                <option value="form-vm">VisManager</option>
-                            </select>
-                        </div>
-        
-                        <div class="form-group" id="number-group">  
-                            <label for="form-number">Number: </label>
-                            <input type="text" id="form-number" autocomplete="off" placeholder="the customer's account number or caller id">
-                        </div>
-
-                        <div class="form-group" id="issue-group">  
-                            <label for="form-issue autocomplete='off">Issue: </label>
-                            <input type="text" id="form-issue" autocomplete="off" list="issue-list" placeholder="the reason for the customer's call">
-                        </div>
-        
-                        <div class="form-group" id="customer-group">  
-                            <label for="form-customer">Name: </label>
-                            <input type="text" id="form-customer" autocomplete="off" placeholder="the customer's full name">
-                        </div>
-        
-                        <div class="form-group" id="facility-group">  
-                            <label for="form-facility">Facility: </label>
-                            <input type="text" id="form-facility" list="fac-list" autocomplete="off" placeholder="the name and state of the facility">
-                        </div>
-        
-                        <div class="form-group" id="inmate-group" class="display-none">  
-                            <label for="form-inmate">Inmate: </label>
-                            <input type="text" id="form-inmate" autocomplete="off" placeholder="(optional) full name and id of the inmate">
-                        </div>
-
-                        <div class="form-group" id="passcode-group">  
-                            <label for="form-passcode">Passcode: </label>
-                            <input type="text" id="form-passcode" autocomplete="off" placeholder="customer's 4-to-8-digit ivr passcode">
-                        </div>
-        
-                        <div class="form-group" id="resolution-group">  
-                            <label for="form-resolution">Resolution: </label>
-                            <input type="text" id="form-resolution" autocomplete="off" placeholder="how you assisted the customer">
-                        </div>
-        
-                        <div class="form-group">
-                            <button type="button" id="form-copy">Copy</button>
-                            <button type="button" id="form-reset">Reset</button>
-                        </div>
-        
-                        <!-- add more:  
-                            <div class="form-group">  
-                                <label for="form-">label: </label>
-                                <input type="text" id="form-">
-                            </div>
-                        -->
-                    </form>
-                </div>
-                <div class="split-right">
-                    <!-- Help information populates here -->
-                    <div id="aside-content">                
-                        <div id="aside-content-container"></div>
-                    </div>
-                </div>
-            </div>
+            <div id="main-left"></div>
+            <div id="main-right"></div>
         </div>
     </section>
     <footer class="margin-top">

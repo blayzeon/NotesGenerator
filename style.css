@@ -172,6 +172,11 @@ button:hover{
     text-transform:none !important;
 }
 
+.form-group textarea {
+    width: 100% !important;
+    border: 0px;
+}
+
 .scratchpad{
     margin: 0;
     border: 0;
