@@ -4,7 +4,6 @@
         -==--------------- 2021 ---------------==- 
 
     todo:
-    * facility list from wikipedia (https://en.wikipedia.org/wiki/Lists_of_United_States_state_prisons)
     * dispositions (confluence / QA)
     * populate color input values to be based on what the variable currently is
     * scripts based on facility selected
@@ -12,7 +11,7 @@
 
 */
 
-const facDdata = require('./facilities.json');
+const facData = require('./facilities.json');
 
 // create left content
 const form = [
@@ -38,7 +37,7 @@ const form = [
         placeholder: 'the reason for the customer\'s call',
         copy: true,
         reset: true,
-        datalist: false
+        datalist: 'issue-list'
     },
     {
         label: 'customer',
@@ -55,7 +54,7 @@ const form = [
         placeholder: 'the inmate\'s facility',
         copy: true,
         reset: true,
-        datalist: 'fac-data'
+        datalist: 'fac-list'
     },
     {
         label: 'product',
@@ -163,7 +162,7 @@ function createForm(itemArray, buttons=true){
         }
 
         if (itemArray[i].datalist){
-            newInput.setAttribute('datalist', itemArray[i].datalist);
+            newInput.setAttribute('list', itemArray[i].datalist);
         }
 
         if (itemArray[i].reset){
@@ -715,3 +714,33 @@ productSelect.value = localStorage.getItem('product') || '';
 toggleProductDisplay();
 color.set("both");
 
+// data lists
+// datalists
+const facList = document.getElementById('fac-list');
+
+function addOptions(list, context){
+    if (list[0]){
+        for (let i = 0; i < list.length; i += 1){
+            const option = document.createElement('option');
+            data = list[i] + ` (${context})`;
+            option.value = data;
+            option.innerText = data;
+            facList.appendChild(option); 
+        }
+    } else {
+        for (const property in list) {
+            for (i = 0; i < list[property].length; i += 1){
+                const data = `${list[property][i]} in ${property}`;
+                const option = document.createElement('option');
+                option.value = data;
+                option.innerText = data;
+                facList.appendChild(option); 
+            }
+        }
+    }
+}   
+
+addOptions(facData.state);
+addOptions(facData.CN, "CN");
+addOptions(facData.VM, "VM");
+addOptions(facData.GO, "GO");
