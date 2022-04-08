@@ -1,6 +1,6 @@
 {
     "Account Block": {
-        "product": ["cn", "vm", "go"],
+        "product": ["cn", "go", "vm"],
         "cn": [
             {
                 "label": "Call Block Removal",
@@ -13,11 +13,35 @@
             {
                 "label": "Trust Block",
                 "url": "https://confluence.gtl.net/display/CALL/CN+Fraudulent+Blocks"
+            },
+            {
+                "label": "CC Block",
+                "url": "https://confluence.gtl.net/pages/viewpage.action?pageId=91620614"
+            }
+        ],
+        "go": [
+            {
+                "label": "Third-party Communication Violation",
+                "url": "https://confluence.gtl.net/display/CALL/GO+-+Third-party+Communication+Violation"
+            },
+            {
+                "label": "Phone Block",
+                "url": "https://confluence.gtl.net/display/CALL/GO+-+Phone+Blocks"
+            },
+            {
+                "label": "Canada Block",
+                "url": "https://confluence.gtl.net/display/CALL/Blocks+-+Canada"
+            }
+        ],
+        "vm": [
+            {
+                "label": "Approval Status",
+                "url": "https://confluence.gtl.net/pages/viewpage.action?pageId=93586947"
             }
         ]
     },
     "Account Setup": {
-        "product": ["cn"],
+        "product": ["cn", "go", "vm"],
         "cn": [
             {
                 "label": "Account Setup",
@@ -31,10 +55,26 @@
                 "label": "Attorney/Direct Bill Setup",
                 "url": "https://confluence.gtl.net/display/CALL/CN-Direct+Bill"
             }
+        ],
+        "go": [
+            {
+                "label": "Account Verification",
+                "url": "https://confluence.gtl.net/pages/viewpage.action?pageId=123308376"
+            }
+        ],
+        "vm": [
+            {
+                "label": "Duplicate Account",
+                "url": "https://confluence.gtl.net/pages/viewpage.action?pageId=97062071"
+            },
+            {
+                "label": "Register a Visitor",
+                "url": "https://confluence.gtl.net/pages/viewpage.action?pageId=92935592"
+            }
         ]
     },
     "Call Quality Issue": {
-        "product": ["cn"],
+        "product": ["cn", "go"],
         "cn": [
             {
                 "label": "Call Connection Issues",
@@ -48,14 +88,51 @@
                 "label": "Dropped Calls",
                 "url": "https://confluence.gtl.net/display/CALL/CN-Dropped+Calls"
             }
+        ],
+        "go": [
+            {
+                "label": "Call Troubleshooting",
+                "url": "https://confluence.gtl.net/display/CALL/GO+-+Troubleshooting"
+            },
+            {
+                "label": "Inmate Call Complaint",
+                "url": "https://confluence.gtl.net/display/CALL/GO+-+Difficulties+Completing+a+Call"
+            }
+        ]
+    },
+    "Credit": {
+        "product": ["cn", "go"],
+        "cn": [
+            {
+                "label": "Dropped Call Credit",
+                "url": "https://confluence.gtl.net/display/CALL/CN-Dropped+Calls"
+            }
+        ],
+        "go": [
+            {
+                "label": "Dispute/Credit",
+                "url": "https://confluence.gtl.net/pages/viewpage.action?pageId=123309470"
+            }
         ]
     },
     "Complaint": {
-        "product": ["cn"],
+        "product": ["cn", "go", "vm"],
         "cn": [
             {
                 "label": "Supervisor/Manager Request",
                 "url": "https://confluence.gtl.net/display/CALL/CN-Escalated+Call+Process"
+            }
+        ],
+        "go": [
+            {
+                "label": "Supervisor/Manager Request",
+                "url": "https://confluence.gtl.net/display/CALL/GO-Escalated+Call+Process"
+            }
+        ],
+        "vm": [
+            {
+                "label": "Supervisor/Manager Request",
+                "url": "https://confluence.gtl.net/display/CALL/VM-Escalated+Call+Process"
             }
         ]
     },
@@ -63,13 +140,13 @@
         "product": ["go"],
         "go": [
             {
-                "label": "",
-                "url": ""
+                "label": "equifax/incident",
+                "url": "https://confluence.gtl.net/display/CALL/GO-Telmate+Incident+Response+FAQ"
             }
         ]
     },
     "Facility Email": {
-        "product": ["vm"],
+        "product": ["none"],
         "vm": [
             {
                 "label": "",
@@ -78,7 +155,7 @@
         ]
     },
     "Fraud": {
-        "product": ["cn"],
+        "product": ["cn", "go"],
         "cn": [
             {
                 "label": "Chargeback/G-Funds",
@@ -88,37 +165,55 @@
                 "label": "Fraud Report",
                 "url": "https://confluence.gtl.net/pages/viewpage.action?pageId=91620614"
             }
+        ],
+        "go": [
+            {
+                "label": "Fraud Flag",
+                "url": "https://confluence.gtl.net/display/CALL/GO+-+Fraud+Flag"
+            }
         ]
     }, 
     "IVR Info": {
         "product": ["go"],
         "go": [
             {
-                "label": "",
-                "url": ""
+                "label": "IVR Inquiry",
+                "url": "https://confluence.gtl.net/display/CALL/GO+-+IVR+Prompts"
             }
         ]
     },
     "Kiosk": {
-        "product": ["cn"],
+        "product": ["cn", "go"],
         "cn": [
             {
                 "label": "Missing Kiosk Payment",
                 "url": "https://confluence.gtl.net/display/CALL/CN-Missing+Payments"
             }
+        ],
+        "go": [
+            {
+                "label": "Kiosk Inquiry",
+                "url": "https://confluence.gtl.net/display/CALL/GO+-+Kiosks"
+            }
         ]
     },
     "Messaging/Email": {
-        "product": ["cn"],
+        "product": ["cn", "go"],
         "cn": [
             {
                 "label": "Messaging",
                 "url": "https://confluence.gtl.net/display/CALL/CN-Connect+Network+Messaging"
             }
+        ],
+        "go": [
+            {
+                "label": "Messaging",
+                "url": "https://confluence.gtl.net/display/CALL/GO+-+Messaging"
+            }
         ]
     },
     "Other/Misc": {
-        "product": ["cn"],
+        "product": ["cn", "go", "vm"],
         "cn": [
             {
                 "label": "Settlement Minutes",
@@ -128,10 +223,38 @@
                 "label": "CCPA (California Privacy Inquiry)",
                 "url": "https://confluence.gtl.net/pages/viewpage.action?pageId=93585771"
             }
+        ],
+        "go": [
+            {
+                "label": "CCPA (California Privacy Inquiry)",
+                "url": "https://confluence.gtl.net/pages/viewpage.action?pageId=97059342"
+            }
+        ],
+        "vm": [
+            {
+                "label": "CCPA (California Privacy Inquiry",
+                "url": "https://confluence.gtl.net/pages/viewpage.action?pageId=97059348"
+            },
+            {
+                "label": "Add/Remove a Visitor",
+                "url": "https://confluence.gtl.net/pages/viewpage.action?pageId=99862097"
+            },
+            {
+                "label": "Cancel a Visit",
+                "url": "https://confluence.gtl.net/pages/viewpage.action?pageId=92935559"
+            },
+            {
+                "label": "Rate/Time Inquiry",
+                "url": "https://confluence.gtl.net/pages/viewpage.action?pageId=97069696"
+            },
+            {
+                "label": "Refund/Replace Visit",
+                "url": "https://confluence.gtl.net/pages/viewpage.action?pageId=92935494"
+            }
         ]
     },
     "Payment Process": {
-        "product": ["cn"],
+        "product": ["cn", "go"],
         "cn": [
             {
                 "label": "Payment Decline",
@@ -145,10 +268,36 @@
                 "label": "Canada Payment",
                 "url": "https://confluence.gtl.net/display/CALL/CN-AdvancePay+International"
             }
+        ],
+        "go": [
+            {
+                "label": "Prepaid Deposit",
+                "url": "https://confluence.gtl.net/display/CALL/GO+-+Prepaid+Deposit"
+            },
+            {
+                "label": "Trust Deposit",
+                "url": "https://confluence.gtl.net/display/CALL/GO+-+Trust+Deposit"
+            },
+            {
+                "label": "Bail Deposit",
+                "url": "https://confluence.gtl.net/display/CALL/GO+-+Bail+Deposit"
+            },
+            {
+                "label": "Large Deposit",
+                "url": "https://confluence.gtl.net/display/CALL/GO+-+Large+Deposit+Policy"
+            },
+            {
+                "label": "Deposit",
+                "url": "https://confluence.gtl.net/display/CALL/Deposits"
+            },
+            {
+                "label": "Deposit Issue",
+                "url": "https://confluence.gtl.net/display/CALL/GO+-+Deposit+Error+Messages"
+            }
         ]
     },
     "Payment/Bal": {
-        "product": ["cn"],
+        "product": ["cn", "go"],
         "cn": [
             {
                 "label": "APOC Call Inquiry",
@@ -194,10 +343,40 @@
                 "label": "International Payment Inquiry",
                 "url": "https://confluence.gtl.net/display/CALL/CN-AdvancePay+International"
             }
+        ],
+        "go": [
+            {
+                "label": "Inactive Funds",
+                "url": "https://confluence.gtl.net/display/CALL/GO+-+Inactive+Funds"
+            },
+            {
+                "label": "Funds Transfer",
+                "url": "https://confluence.gtl.net/display/CALL/GO+-+Transfers"
+            },
+            {
+                "label": "Collect/Quick Connect Charge",
+                "url": "https://confluence.gtl.net/pages/viewpage.action?pageId=123308681"
+            },
+            {
+                "label": "Voicemail",
+                "url": "https://confluence.gtl.net/display/CALL/GO+-+Voicemail"
+            },
+            {
+                "label": "Canada Large Deposit",
+                "url": "https://confluence.gtl.net/display/CALL/Canada+Large+Deposit+Policy"
+            },
+            {
+                "label": "Call Bundle",
+                "url": "https://confluence.gtl.net/display/CALL/GO+CN+-+Call+Bundles"
+            },
+            {
+                "label": "Bailout",
+                "url": "https://confluence.gtl.net/display/CALL/GO-Bail+Out"
+            }
         ]
     },
     "Promo": {
-        "product": ["vm"],
+        "product": ["none"],
         "vm": [
             {
                 "label": "",
@@ -215,7 +394,7 @@
         ]
     },
     "Refund": {
-        "product": ["cn"],
+        "product": ["cn", "go"],
         "cn": [
             {
                 "label": "Refund",
@@ -229,23 +408,51 @@
                 "label": "Void",
                 "url": "https://confluence.gtl.net/display/CALL/CN-Refund%2C+Account+Closure%2C+Void"
             }
+        ],
+        "go": [
+            {
+                "label": "Refund",
+                "url": "https://confluence.gtl.net/pages/viewpage.action?pageId=123308694"
+            },
+            {
+                "label": "Void",
+                "url": "https://confluence.gtl.net/pages/viewpage.action?pageId=123308694"
+            }
         ]
     },
     "Schedule Visit": {
         "product": ["vm"],
         "vm": [
             {
-                "label": "",
-                "url": ""
+                "label": "Schedule Visit",
+                "url": "https://confluence.gtl.net/pages/viewpage.action?pageId=97069696"
+            },
+            {
+                "label": "Reschedule Visit",
+                "url": "https://confluence.gtl.net/pages/viewpage.action?pageId=92935492"
+            },
+            {
+                "label": "Schedule Visit (Kisok)",
+                "url": "https://confluence.gtl.net/pages/viewpage.action?pageId=92935491"
+            },
+            {
+                "label": "Schedule Visit (Visitor)",
+                "url": "https://confluence.gtl.net/pages/viewpage.action?pageId=99861430"
             }
         ]
     },
     "Tablet": {
-        "product": ["cn"],
+        "product": ["cn", "go"],
         "cn": [
             {
                 "label": "Unlocking Inmate Tablet",
                 "url": "https://confluence.gtl.net/display/CALL/CN-Unlocking+Tablets"
+            }
+        ],
+        "go": [
+            {
+                "label": "Tablet Facility",
+                "url": "https://confluence.gtl.net/display/CALL/GO+-+Tablet+Facilities"
             }
         ]
     },
@@ -259,7 +466,7 @@
         ]
     },
     "Upcoming Launch": {
-        "product": ["vm"],
+        "product": ["none"],
         "vm": [
             {
                 "label": "",
@@ -271,17 +478,31 @@
         "product": ["vm"],
         "vm": [
             {
-                "label": "",
-                "url": ""
+                "label": "VisBridge Troubleshooting",
+                "url": "https://confluence.gtl.net/pages/viewpage.action?pageId=97069593"
             }
         ]
     },
     "Visitation": {
-        "product": ["cn"],
+        "product": ["cn", "go"],
         "cn": [
             {
                 "label": "Video Visitation",
                 "url": "https://confluence.gtl.net/display/CALL/CN-Video+Visitation"
+            }
+        ], 
+        "go": [
+            {
+                "label": "Video Visitation",
+                "url": "https://confluence.gtl.net/display/CALL/GO+-+Video+Visitation"
+            },
+            {
+                "label": "Visitation",
+                "url": "https://confluence.gtl.net/display/CALL/GO+-+Visitation"
+            },
+            {
+                "label": "T-Phone Visitation",
+                "url": "https://confluence.gtl.net/display/CALL/GO+-+T-Phone+Visit+Facilities"
             }
         ]
     },
@@ -289,13 +510,21 @@
         "product": ["vm"],
         "vm": [
             {
-                "label": "",
-                "url": ""
+                "label": "Transcoding Error",
+                "url": "https://confluence.gtl.net/pages/viewpage.action?pageId=99844660"
+            },
+            {
+                "label": "Station Issue",
+                "url": "https://confluence.gtl.net/display/CALL/VM-Troubleshooting+a+Station"
+            },
+            {
+                "label": "At Home Visit Issue",
+                "url": "https://confluence.gtl.net/display/CALL/VM-Troubleshooting+at+Home+Visits"
             }
         ]
     },
     "Website Inquiry": {
-        "product": ["cn"],
+        "product": ["cn", "go", "vm"],
         "cn": [
             {
                 "label": "Web Account Creation",
@@ -309,6 +538,43 @@
                 "label": "Password Reset",
                 "url": "https://confluence.gtl.net/pages/viewpage.action?pageId=91620676"
             }
+        ],
+        "go": [
+            {
+                "label": "Photos",
+                "url": "https://confluence.gtl.net/display/CALL/GO+-+Photos"
+            },
+            {
+                "label": "Online Transfer",
+                "url": "https://confluence.gtl.net/display/CALL/GO+-+Transfers+Online"
+            },
+            {
+                "label": "Mobile App Inquiry",
+                "url": "https://confluence.gtl.net/display/CALL/GO+-+Mobile+Apps"
+            },
+            {
+                "label": "Verification via Email",
+                "url": "https://confluence.gtl.net/display/CALL/GO+-+Verification+Process+Received+Via+Email"
+            },
+            {
+                "label": "Online Account",
+                "url": "https://confluence.gtl.net/pages/viewpage.action?pageId=91621381"
+            }
+        ],
+        "vm": [
+            {
+                "label": "Password Reset",
+                "url": "https://confluence.gtl.net/pages/viewpage.action?pageId=99862115"
+            },
+            {
+                "label": "App Installation",
+                "url": "https://confluence.gtl.net/pages/viewpage.action?pageId=96010459"
+            },
+            {
+                "label": "Visitation Instructions",
+                "url": "https://confluence.gtl.net/pages/viewpage.action?pageId=99861430"
+            }
         ]
     }
 }
+
