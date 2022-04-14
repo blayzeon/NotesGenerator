@@ -1,9 +1,10 @@
 :root{
-    --primaryColor: #eeeeee; /* light gray */
-    --secondaryColor: #b3aeae;
-    --accentColor: #29CC53; 
-    --darkestColor: black;
-    --lightestColor: white;
+    --background: #eeeeee;
+    --backgroundFont: #000000;
+    --primary: #29CC53; 
+    --primaryFont: white;
+    --inputs: #ffffff;
+    --inputsFont: #000000;
 }
 
 *,
@@ -15,7 +16,6 @@
 html, body{
     height: 100%;
     width: 100%;
-    color: var(--darkestColor);
 }
 
 li{
@@ -28,13 +28,26 @@ body{
     flex-wrap: nowrap;
     padding: 0;
     border: 0;
-    background: var(--primaryColor);
+    background-color: var(--background);
+    color: var(--backgroundFont);
     font-family: arial;
     text-transform: lowercase;
 }
 
 body, h1, h2, h3, p{
     margin: 0;
+}
+
+.form-group, input[type='text'], textarea, select, select option{
+    background-color: var(--inputs) !important;
+    color: var(--inputsFont);
+}
+
+.dropdown-menu > span:only-child {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-right: 10%;
 }
 
 input:focus, textarea:focus{
@@ -45,9 +58,9 @@ nav, footer{
     display: flex;
     align-content: center;
     justify-content: center;
-    background: var(--accentColor);
+    background: var(--primary);
     padding: 0.8rem;
-    color: var(--lightestColor);
+    color: var(--primaryFont);
     width: 100%;
 }
 
@@ -65,34 +78,34 @@ footer{
     text-decoration: none;
     padding: 0.2rem 0.4rem;
     border-radius: 0.5rem;
-    background: var(--lightestColor);
-    color: var(--accentColor);
+    background: red;
+    color: red;
 }
 
-button, select{
+button, select, input[type='button']{
     cursor: pointer;
     text-transform: lowercase;
 }
 
-button{
+button, input[type='button']{
     font-weight: 600;
     border: 0;
     padding: 0.2rem 0.4rem;
-    outline: 0.15rem solid var(--lightestColor);
+    outline: 0.15rem solid var(--primaryFont);
     border-radius: 0.5rem;
-    background-color: var(--accentColor);
-    color: var(--lightestColor);
+    background-color: var(--primary);
+    color: var(--primaryFont);
 }
 
-button:hover{
-    background: var(--lightestColor);
-    color: var(--accentColor);
-    outline: 0.15rem solid var(--accentColor);
+button:hover, input[type='button']:hover{
+    background: var(--primaryFont);
+    color: var(--primary);
+    outline: 0.15rem solid var(--primary);
 }
 
 .selectBg:hover, .selectBg > a:hover{
-    color: var(--lightestColor);
-    background: var(--accentColor);
+    color: var(--primaryFont);
+    background: var(--primary);
 }
 
 .selectBg > a{
@@ -140,12 +153,11 @@ button:hover{
 
 .form-group{
     display: flex;
-    background: white;
     padding: 0.75rem;
     margin-bottom: 0.5rem;
     align-items: center;
     justify-content: space-around;
-    filter: drop-shadow(0 0 0.1rem gray);
+    filter: drop-shadow(0.2rem 0.2rem 0.2rem var(--backgroundFont));
 }
 
 .form-group select{
@@ -211,22 +223,22 @@ button:hover{
     right: 0;
     margin-top: 0rem;
     background: white;
-    filter: drop-shadow(0 0 0.1rem var(--accentColor));
-    outline: 0.1rem solid var(--lightestColor);
+    filter: drop-shadow(0 0 0.1rem var(--primary));
+    outline: 0.1rem solid var(--primary);
     width: 30%;
     padding: 0.1rem;
 }
 
 #aside-menu-container button{
-    background: var(--accentColor);
-    color: var(--lightestColor);
-    border: 0.1rem solid var(--accentColor);
+    background: var(--primary);
+    color: var(--primaryFont);
+    border: 0.1rem solid var(--primary);
     border-radius: 0px;
 }
 
 #aside-menu-container button:hover{
-    background: var(--lightestColor);
-    color: var(--accentColor);
+    background: var(--primaryFont);
+    color: var(--primary);
 }
 
 #aside-menu-container ul{
