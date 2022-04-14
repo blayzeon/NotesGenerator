@@ -209,6 +209,7 @@ function createForm(itemArray, buttons=true){
             
         } else if (itemArray[i].placeholder){
             newInput.setAttribute('placeholder', itemArray[i].placeholder);
+            newInput.setAttribute('type', 'text');
         }
 
         formItem.appendChild(newInput);
@@ -311,88 +312,60 @@ const version = document.getElementById('version-number');
 version.innerText = '22.401';
 
 // color
-const color = {
-    set: function(cssVar, textColor="--lightestColor"){
-        const root = document.querySelector(':root');
+function setCssVar(variable, value){
+    // set a css variable to a value
+    const root = document.querySelector(':root');
+    root.style.setProperty(variable, value);
+    localStorage.setItem(variable, value);
+}
 
-        if(cssVar === "both"){
-            // set both the --primary and --accent
-            cssVar = "--accentColor"
-            root.style.setProperty("--primaryColor", localStorage.getItem('--primaryColor'));
-        }
-        let value = ""
-            if (localStorage.getItem(cssVar) != null){
-                value = localStorage.getItem(cssVar);
+function setColorListeners(dataList){
+    function hexToHSL(hex) {
+        // credit: https://gist.github.com/xenozauros/f6e185c8de2a04cdfecf
+        var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+          r = parseInt(result[1], 16);
+          g = parseInt(result[2], 16);
+          b = parseInt(result[3], 16);
+          r /= 255, g /= 255, b /= 255;
+          var max = Math.max(r, g, b), min = Math.min(r, g, b);
+          var h, s, l = (max + min) / 2;
+          if(max == min){
+            h = s = 0; // achromatic
+          }else{
+            var d = max - min;
+            s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+            switch(max){
+              case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+              case g: h = (b - r) / d + 2; break;
+              case b: h = (r - g) / d + 4; break;
+            }
+            h /= 6;
+          }
+        var HSL = new Object();
+        HSL['h']=h;
+        HSL['s']=s;
+        HSL['l']=l;
+        return HSL;
+    }
+
+    // searches by a data list and sets colors to the var equal to their id
+    const items = document.querySelectorAll(dataList);
+
+    items.forEach((item)=>{
+        item.value = getComputedStyle(document.querySelector(':root')).getPropertyValue(item.id);
+        item.addEventListener('change', ()=>{
+            setCssVar(item.id, item.value);
+
+            // update the fonts
+            const hsl = hexToHSL(item.value);
+            if (hsl.l >= 0.6){
+                setCssVar(`${item.id}Font`, '#000000'); 
             } else {
-                value = '#29CC53';
+                setCssVar(`${item.id}Font`, '#FFFFFF'); 
             }
-            root.style.setProperty(cssVar, value);
-
-        const headerColor = getComputedStyle(root).getPropertyValue('--accentColor');
-        if (this.checkBrightness(headerColor) > 200){
-            root.style.setProperty(textColor, "black");
-        } else {
-            root.style.setProperty(textColor, "white");
-        }
-    },
-
-    default: function(){
-        localStorage.setItem('--primaryColor', '#eeeeee');
-        localStorage.setItem('--accentColor', '#29CC53');
-        document.querySelector(':root').style.setProperty('--primaryColor', '#eeeeee');
-        document.querySelector(':root').style.setProperty('--accentColor', '#29CC53');
-        document.querySelector(':root').style.setProperty('--lightestColor', 'white');
-    },
-
-    listen: function(dataList, resetId){
-        document.querySelectorAll(dataList).forEach((input) =>{
-            input.addEventListener('change', ()=>{
-                localStorage.setItem(input.id, input.value);
-                color.set(input.id);
-            });
         });
-
-        document.querySelector(resetId).addEventListener('click', color.default);
-    },
-
-    checkBrightness: function(color){
-        // adjusts the color for the buttons so text is readable
-        const hex = color.replace('#', '');
-        let r = parseInt(hex.substr(0,2),16);
-        let g = parseInt(hex.substr(2,2,),16);
-        let b = parseInt(hex.substr(4,2),16);
-        const brightness = ((r*299)+(g*587)+(b*114)) / 1000;
-        
-        return brightness;
-    },
-
-    sortColors: function(theme="none"){
-        let result = [];
-        if (theme != "none"){
-            for (let i = 0; i < theme.length; i++){
-                if (i === 0){
-                    // if we're at the first index, push & continue
-                    result.push(theme[i]);
-                    continue;
-                }
-
-                for (let j = 0; j < theme.length; j++){
-                    if (result.includes(theme[i]) && result.length === theme.length){
-                        // we don't want dupes
-                        continue;
-                    } else if (j === i){
-                        result.push(theme[i]);
-                    } else if (color.checkBrightness(theme[i]) >= color.checkBrightness(theme[j])){
-                        result.splice(j, 0, theme[i]);
-                    }
-                }
-            }
-            return result;
-        } else {
-            console.log('please provide a valid array for sorting')
-        }
-    },
-};
+    });
+}
 
 // top bar
 const navLinks = [
@@ -539,20 +512,28 @@ const colorCtrl = (function(){
     const container = document.createElement('span');
 
     const header = document.createElement('div');
-    header.innerText = 'Top: ';
+    header.innerText = 'Header: ';
     const hInput = document.createElement('input');
-    hInput.setAttribute('id', '--accentColor');
+    hInput.setAttribute('id', '--primary');
     hInput.setAttribute('type', 'color');
     hInput.setAttribute('data-color', '');
     header.appendChild(hInput);
 
     const background = document.createElement('div');
-    background.innerText = 'Main: '
+    background.innerText = 'Body: '
     const bInput = document.createElement('input');
-    bInput.setAttribute('id', '--primaryColor');
+    bInput.setAttribute('id', '--background');
     bInput.setAttribute('type', 'color');
     bInput.setAttribute('data-color', '');
     background.appendChild(bInput);
+
+    const inputs = document.createElement('div');
+    inputs.innerText = 'Form: '
+    const iInput = document.createElement('input');
+    iInput.setAttribute('id', '--inputs');
+    iInput.setAttribute('type', 'color');
+    iInput.setAttribute('data-color', '');
+    inputs.appendChild(iInput);
 
     const resetC = document.createElement('div');
     const reset = document.createElement('input');
@@ -563,6 +544,7 @@ const colorCtrl = (function(){
 
     container.appendChild(header);
     container.appendChild(background);
+    container.appendChild(inputs);
     container.appendChild(reset);
 
     return container;
@@ -686,9 +668,6 @@ function createNav(links='none', other) {
 
 createNav(navLinks, navOther);
 
-// event listeners
-color.listen('[data-color]', '#adj-reset');
-
 // evennt listner for class management
 const productSelect = document.querySelector('select');
 
@@ -708,13 +687,46 @@ productSelect.addEventListener('change', ()=>{
     toggleProductDisplay();
 });
 
+/// color
+document.querySelector('#adj-reset').addEventListener('click',()=>{
+    const defaultColors = {
+        background: '#eeeeee',
+        primary: '#29CC53', 
+        primaryFont: '#ffffff',
+        inputs: '#ffffff',
+        inputsFont: '#000000',
+    }
+
+    const root = document.querySelector(':root');
+
+    for (let key in defaultColors){
+        root.style.setProperty(`--${key}`, defaultColors[key]);
+    }
+
+    const items = document.querySelectorAll('[data-color]');
+
+    items.forEach((item)=>{
+        item.value = getComputedStyle(document.querySelector(':root')).getPropertyValue(item.id);
+        setCssVar(item.id, item.value);
+    });
+});
+
+setColorListeners('[data-color]');
+
 // local storage
 document.getElementById('rep-name').value = localStorage.getItem('rep-name') || '';
 productSelect.value = localStorage.getItem('product') || '';
 toggleProductDisplay();
-color.set("both");
 
-// data lists
+document.querySelectorAll('[data-color]').forEach((item) => {
+    // load the color from local storage and add it to the root
+    const value = localStorage.getItem(item.id);
+    if (value !== null){
+        document.querySelector(':root').style.setProperty(item.id, value);
+        item.value = value;
+    }
+});
+
 // datalists
 const facList = document.getElementById('fac-list');
 
