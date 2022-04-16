@@ -12,6 +12,7 @@
 */
 
 const facData = require('./facilities.json');
+const issueData = require('./confluence.json');
 
 // create left content
 const form = [
@@ -243,7 +244,8 @@ function createForm(itemArray, buttons=true){
         if (product.value === 'GettingOut'){
             // customer's name for the start of the notes
             const customer = document.querySelector('#customer-name').value;
-            const customerName = customer.split(' ');
+            let customerName = customer.split(' ');
+            if (customerName[0] === '') { customerName[0] = 'unknown' };
             opening = `as per ${customerName[0]},`;
 
             // main notes
@@ -685,6 +687,7 @@ function toggleProductDisplay(){
 productSelect.addEventListener('change', ()=>{
     localStorage.setItem('product', productSelect.value);
     toggleProductDisplay();
+    updateIssueList();
 });
 
 /// color
@@ -751,6 +754,47 @@ function addOptions(list, context){
         }
     }
 }   
+
+function filterConfluence(filter){
+    const filteredItems = [];
+    for (const key in issueData){
+        for (const key2 in issueData[key]){
+            for (let i = 0; i < issueData[key][key2].length; i +=1){
+                if (key2 !== filter) { continue }
+                if (issueData[key][key2][i].label){
+                    filteredItems.push(issueData[key][key2][i]);
+                }
+            }
+        }
+    }
+
+    return filteredItems;
+}
+
+function updateIssueList(){
+    document.querySelector('#issue-list').innerHTML = (function(){
+        let dataOptions = '';
+        const product = document.querySelector('#product').value;
+    
+        let dataList = issueData;
+    
+        if (product !== ""){
+            dataList = filterConfluence(product)
+        }
+    
+        for (const key in dataList){
+            if (dataList[key].label){
+                dataOptions += `<option value="${dataList[key].label}">${dataList[key].label}</option>`;           
+            } else {
+                dataOptions += `<option value="${key}">${key}</option>`;
+            }
+        }
+    
+        return dataOptions;
+    })();
+}
+
+updateIssueList();
 
 addOptions(facData.state);
 addOptions(facData.CN, "CN");
