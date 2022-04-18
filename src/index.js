@@ -284,6 +284,19 @@ function createForm(itemArray, buttons=true){
     });
 
     if (buttons === true){
+        // hard coded button
+        const confluenceLink = document.createElement('a');
+        confluenceLink.setAttribute('target', '_blank');
+        confluenceLink.setAttribute('href', 'https://confluence.gtl.net/display/CALL/Training+Center+of+Excellence');
+        confluenceLink.innerText = 'confluence';
+        confluenceLink.setAttribute('id', 'confluenceLink');
+
+        const confluenceBtn = document.createElement('button');
+        confluenceBtn.setAttribute('type', 'button');
+        confluenceBtn.appendChild(confluenceLink)
+        formButtons.appendChild(confluenceBtn);
+        // 
+
         const resetBtn = document.createElement('button');
         resetBtn.setAttribute('type', 'button');
         resetBtn.innerText = 'reset';
@@ -552,29 +565,6 @@ const colorCtrl = (function(){
     return container;
 })();
 
-const contactUs = (function(){
-    const container = document.createElement('ul');
-    const items = [
-        {
-            product: 'ConnectNetwork',
-            url: 'https://web.connectnetwork.com/contact-us/',
-            items: [
-                'Customer Service: (877) 650-4249',
-                'AdvancePay Automated Payment System: (800) 483-8314',
-                'Trust Fund Automated Payment System: (888) 988-4768',
-                'PIN Debit Automated Payment System: (855) 706-2445',
-                'CADOC Customers: (866) 607-6006',
-                'FLDOC Customers: (866) 732-9098',
-                'MIDOC Customers: (855) 466-2832',
-                'OHDRC Direct Remit Customers: (800) 231-0193',
-                'WADOC PIN Debit Customers: (800) 786-8521',
-                'DSI Customers: (888) 949-3303',
-                'VAC Customers: (800) 786-8521',
-            ]
-        }
-    ]
-})();
-
 const navOther = [
     {
         label: 'color',
@@ -671,7 +661,7 @@ function createNav(links='none', other) {
 createNav(navLinks, navOther);
 
 // evennt listner for class management
-const productSelect = document.querySelector('select');
+const productSelect = document.querySelector('#product');
 
 function toggleProductDisplay(){
     document.querySelectorAll("[data-product]").forEach(item => {
@@ -688,6 +678,40 @@ productSelect.addEventListener('change', ()=>{
     localStorage.setItem('product', productSelect.value);
     toggleProductDisplay();
     updateIssueList();
+});
+
+const issueElm = document.querySelector('[data-copy="issue"]');
+issueElm.addEventListener('change', ()=>{
+
+    function createDataObj(){
+        const product = productSelect.value;
+        const issue = issueElm.value;
+        for ( key in issueData ){
+            if (issueData[key][product]) {
+                for (let i = 0; i < issueData[key][product].length; i += 1) {
+                    if (issueData[key][product][i].label === issue){
+                        return {
+                            disposition: key,
+                            issue: issue,
+                            url: issueData[key][product][i].url
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    const issue = createDataObj();
+
+    const confluenceLink = document.querySelector('#confluenceLink');
+    
+    if (issue){
+        confluenceLink.href = issue.url;
+        confluenceLink.innerText = issue.disposition;
+    } else {
+        confluenceLink.href = 'https://confluence.gtl.net/display/CALL/Training+Center+of+Excellence';
+        confluenceLink.innerText = 'confluence';
+    }
 });
 
 /// color
