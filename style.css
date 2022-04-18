@@ -73,6 +73,17 @@ footer{
     margin: 0 !important;
     list-style: none;
 }
+
+button > a {
+    color: var(--primaryFont);
+    text-decoration: none;
+}
+
+button:hover > a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
 .bubble-text{
     font-weight: 600;
     text-decoration: none;
