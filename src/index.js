@@ -4,8 +4,6 @@
         -==--------------- 2021 ---------------==- 
 
     todo:
-    * dispositions (confluence / QA)
-    * populate color input values to be based on what the variable currently is
     * scripts based on facility selected
     * rep todo checks (cpni and such)
 
@@ -73,6 +71,49 @@ const form = [
         id: "product",
         datalist: false
     },
+    /* CN ITEMS */
+    {
+        label: 'passcode',
+        type: 'input',
+        placeholder: 'customer\'s 4-to-8-digit passcode',
+        copy: true,
+        reset: true,
+        data: 'ConnectNetwork'
+    },
+    /* GO ITEMS */
+    {
+        label: 'email',
+        type: 'input',
+        placeholder: 'customer\'s email address',
+        copy: false,
+        reset: true,
+        data: 'GettingOut'
+    },
+    {
+        label: 'inmate',
+        type: 'input',
+        placeholder: 'the inmate\'s first and last name',
+        copy: false,
+        reset: true,
+        data: 'GettingOut'
+    },
+    /* VM ITEMS */
+    {
+        label: 'dob',
+        type: 'input',
+        placeholder: 'the customer\'s date of birth',
+        copy: false,
+        reset: true,
+        data: 'VisManager'
+    },
+    {
+        label: 'id',
+        type: 'input',
+        placeholder: 'the inmate\'s ID number',
+        copy: false,
+        reset: true,
+        data: 'VisManager'
+    },
     {
         label: 'resolution',
         type: 'input',
@@ -81,55 +122,6 @@ const form = [
         reset: true,
         id: "resolution",
         datalist: false
-    },
-];
-
-const cnItems = [
-    {
-        label: 'passcode',
-        type: 'input',
-        placeholder: 'customer\'s 4-to-8-digit passcode',
-        copy: true,
-        reset: true,
-        insert: true
-    },
-];
-
-const goItems = [
-    {
-        label: 'email',
-        type: 'input',
-        placeholder: 'customer\'s email address',
-        copy: false,
-        reset: true,
-        insert: true
-    },
-    {
-        label: 'inmate',
-        type: 'input',
-        placeholder: 'the inmate\'s first and last name',
-        copy: false,
-        reset: true,
-        insert: true
-    },
-];
-
-const vmItems = [
-    {
-        label: 'dob',
-        type: 'input',
-        placeholder: 'the customer\'s date of birth',
-        copy: false,
-        reset: true,
-        insert: true
-    },
-    {
-        label: 'id',
-        type: 'input',
-        placeholder: 'the inmate\'s ID number',
-        copy: false,
-        reset: true,
-        insert: true
     },
 ];
 
@@ -167,6 +159,10 @@ function createForm(itemArray, buttons=true){
             newInput.setAttribute('list', itemArray[i].datalist);
         }
 
+        if (itemArray[i].data){
+            formItem.setAttribute('data-product', itemArray[i].data);
+        }
+
         if (itemArray[i].reset){
             newInput.setAttribute('data-reset', 'reset');
         }
@@ -186,29 +182,6 @@ function createForm(itemArray, buttons=true){
                 newOption.innerText = itemArray[i].options[j];
                 newInput.appendChild(newOption);
             }
-
-            newInput.addEventListener('change', ()=>{
-                let productItems = undefined;
-
-                const insertItems = document.querySelectorAll('[data-insert="insert"]');
-                insertItems.forEach((item) => {
-                    item.remove();
-                });
-
-                if (newInput.value === "ConnectNetwork"){
-                    productItems = cnItems;
-                } else if (newInput.value === "GettingOut"){
-                    productItems = goItems;
-                } else if (newInput.value === "VisManager"){
-                    productItems = vmItems;
-                }
-
-                if (productItems === undefined) { return };
-
-                const newItem = createForm(productItems, false);
-                form.insertBefore(newItem, formItem.nextSibling);
-            });
-            
         } else if (itemArray[i].placeholder){
             newInput.setAttribute('placeholder', itemArray[i].placeholder);
             newInput.setAttribute('type', 'text');
@@ -227,9 +200,16 @@ function createForm(itemArray, buttons=true){
     formButtons.appendChild(copyBtn);
 
     copyBtn.addEventListener('click', ()=>{
-        const formValues = Array.from(document.querySelectorAll('[data-copy]'))
-            .map((x) => {return `${x.getAttribute('data-copy')}: ${x.value || 'unknown'}`})
-            .filter((a) => a);
+        const product = document.querySelector('#product');
+        const formValues = Array.from(document.querySelectorAll('[data-copy]')).map((x) => {return `${x.getAttribute('data-copy')}: ${x.value || 'unknown'}`})
+
+        if (product.value === 'VisManager'){
+            for (let i = 0; i < formValues.length; i += 1){
+                if (formValues[i].includes('passcode')){
+                    formValues.splice(i, 1);
+                }
+            }
+        }
         let noteString = formValues.join(' / ');
 
         if (noteString.length === 0){
@@ -238,7 +218,7 @@ function createForm(itemArray, buttons=true){
         };
 
         // customize the note
-        const product = document.querySelector('#product');
+        
         let opening = undefined;
         let closing = undefined;
         const rep = document.querySelector('#rep-name').value;
