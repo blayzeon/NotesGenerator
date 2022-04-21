@@ -12,6 +12,7 @@
 const facData = require('./facilities.json');
 const issueData = require('./confluence.json');
 const colorCtrl = require('./color.js');
+const reminders = require('./reminders.js');
 
 // create left content
 const form = [
@@ -42,7 +43,7 @@ const form = [
     {
         label: 'customer',
         type: 'input',
-        placeholder: 'the customer\'s first and last name',
+        placeholder: 'the customer\'s full name',
         copy: true,
         reset: true,
         id: "customer-name",
@@ -75,7 +76,7 @@ const form = [
     {
         label: 'passcode',
         type: 'input',
-        placeholder: 'customer\'s 4-to-8-digit passcode',
+        placeholder: 'the customer\'s 4-to-8-digit passcode',
         copy: true,
         reset: true,
         data: 'ConnectNetwork'
@@ -84,7 +85,7 @@ const form = [
     {
         label: 'email',
         type: 'input',
-        placeholder: 'customer\'s email address',
+        placeholder: 'the customer\'s email address',
         copy: false,
         reset: true,
         data: 'GettingOut'
@@ -452,6 +453,10 @@ const navOther = [
     {
         label: 'color',
         element: colorCtrl
+    },
+    {
+        label: 'reminders',
+        element: reminders
     }
 ];
 
@@ -539,9 +544,13 @@ function createNav(links='none', other) {
         });
     });
 
+    return nav;
+
 }
 
-createNav(navLinks, navOther);
+const nav = createNav(navLinks, navOther);
+
+
 
 // evennt listner for class management
 const productSelect = document.querySelector('#product');

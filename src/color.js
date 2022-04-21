@@ -37,7 +37,7 @@ const colorCtrl = (function(){
         // update the fonts
         const hsl = hexToHSL(value);
         const font = `${variable}Font`;
-        if (hsl.l >= 0.6){
+        if (hsl.l >= 0.8){
             root.style.setProperty(font, '#000000');
         } else {
             root.style.setProperty(font, '#FFFFFF');
@@ -144,31 +144,5 @@ const colorCtrl = (function(){
     
     return container;
 })();
-
-
-/* color
-
-
-
-
-/// color
-
-
-setColorListeners('[data-color]');
-
-
-// main colors
-document.querySelectorAll('[data-color]').forEach((item) => {
-    // load the color from local storage and add it to the root
-    const value = localStorage.getItem(item.id);
-
-    if (value !== null){
-        setCssVar(item.id, value)
-    }
-});
-
-
-
-*/
 
 module.exports = colorCtrl;

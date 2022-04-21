@@ -66,6 +66,24 @@ nav, footer{
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .5);
 }
 
+.reminder-container > input {
+    width: 100%;
+}
+
+.reminder-container > input[type=button] {
+    margin-bottom: 1rem;
+}
+
+.reminder-group > label {
+    cursor: pointer;
+}
+
+.reminder-group > textarea {
+    width: 100%;
+    min-height: 1.5rem;
+    resize: vertical;
+}
+
 footer{
     display: none;
 }
