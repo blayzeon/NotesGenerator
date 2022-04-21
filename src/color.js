@@ -1,7 +1,7 @@
 const colorCtrl = (function(){
     // functions
     function hexToHSL(hex) {
-        // credit: https://gist.github.com/xenozauros/f6e185c8de2a04cdfecf
+        // source for hexToHSL: https://gist.github.com/xenozauros/f6e185c8de2a04cdfecf
         var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
           r = parseInt(result[1], 16);
           g = parseInt(result[2], 16);
@@ -44,24 +44,16 @@ const colorCtrl = (function(){
         }
     }
 
-    function setColorListener(item){
-        item.value = getComputedStyle(document.querySelector(':root')).getPropertyValue(item.id);
-        item.addEventListener('change', ()=>{
-            setCssVar(item.id, item.value);
-        });
-    }
-    
-    function memory(cssVar, elm){
-        const storage = localStorage.getItem(cssVar);
-        let defaultVal = storage;
-        if (storage){
-            setCssVar(cssVar, storage);
-        } else {
-            defaultVal = getComputedStyle(document.querySelector(':root')).getPropertyValue(cssVar);
+    function grabDefaultColors(cssVar) {
+        const saved = localStorage.getItem(cssVar);
+
+        if (!saved){
+            return getComputedStyle(document.querySelector(':root')).getPropertyValue(cssVar);
         }
 
-        elm.value = defaultVal;
+        return saved;
     }
+
 
     const container = document.createElement('span');
 
@@ -125,24 +117,31 @@ const colorCtrl = (function(){
         });
     });
 
-    hInput.addEventListener('click', ()=> {
-        setColorListener(hInput);
+    hInput.addEventListener('change', ()=> {
+        setCssVar(hInput.id, hInput.value);
     });
 
-    bInput.addEventListener('click', ()=> {
-        setColorListener(bInput);
+    bInput.addEventListener('change', ()=> {
+        setCssVar(bInput.id, bInput.value);
     });
 
-    iInput.addEventListener('click', ()=> {
-        setColorListener(iInput);
+    iInput.addEventListener('change', ()=> {
+        setCssVar(iInput.id, iInput.value);
     });
 
-    // local storage
-    memory('--primary', hInput);
-    memory('--inputs', iInput);
-    memory('--background', bInput);
+    const inputArray = [
+        hInput,
+        bInput,
+        iInput
+    ]
 
+    for (let i = 0; i < inputArray.length; i += 1){
+        const value = grabDefaultColors(inputArray[i].id);
+        inputArray[i].value = value;
+        setCssVar(inputArray[i].id, value);
+    }
 
+    
     return container;
 })();
 

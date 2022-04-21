@@ -1,10 +1,10 @@
 :root{
-    --background: #eeeeee;
-    --backgroundFont: #000000;
-    --primary: #29CC53; 
-    --primaryFont: white;
-    --inputs: #ffffff;
-    --inputsFont: #000000;
+    --background:#eeeeee;
+    --backgroundFont:#000000;
+    --primary:#29CC53; 
+    --primaryFont:white;
+    --inputs:#ffffff;
+    --inputsFont:#000000;
 }
 
 *,
@@ -62,6 +62,8 @@ nav, footer{
     padding: 0.8rem;
     color: var(--primaryFont);
     width: 100%;
+    outline: 1px solid hsla(0, 0%, 100%, 0.5);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .5);
 }
 
 footer{
@@ -168,7 +170,8 @@ button:hover, input[type='button']:hover{
     margin-bottom: 0.5rem;
     align-items: center;
     justify-content: space-around;
-    filter: drop-shadow(0.2rem 0.2rem 0.2rem var(--backgroundFont));
+    outline: 1px solid hsla(0, 0%, 100%, 0.5);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .5);
 }
 
 .form-group select{
