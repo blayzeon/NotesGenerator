@@ -12,7 +12,6 @@
 const facData = require('./facilities.json');
 const issueData = require('./confluence.json');
 const colorCtrl = require('./color.js');
-const reminders = require('./reminders.js');
 
 // create left content
 const form = [
@@ -449,14 +448,47 @@ const navLinks = [
     
 ];
 
+const savedNotes = (function(){
+    const data = [
+        'ConnectNetwork',
+        'GettingOut',
+        'VisManager'
+    ];
+
+    const container = document.createElement('div');
+    container.classList.add('saved-notes-container');
+
+    for (let i = 0; i < data.length; i += 1){
+        const span = document.createElement('span');
+        span.setAttribute('data-product', data[i]);
+        
+        const label = document.createElement('label');
+        label.innerHTML = `<strong>${data[i]}: </strong>`;
+        span.appendChild(label);
+
+        const note = document.createElement('textarea');
+        note.setAttribute('id', `${data[i]}-notes`);
+        note.innerText = localStorage.getItem(note.id) || '';
+        note.addEventListener('keyup', ()=>{
+            localStorage.setItem(note.id, note.value);
+        });
+        span.appendChild(note);
+
+        container.appendChild(span);
+    }
+
+    return container;
+
+})();
+
 const navOther = [
     {
         label: 'color',
         element: colorCtrl
     },
     {
-        label: 'reminders',
-        element: reminders
+        label: 'saved notes',
+        element: savedNotes
     }
 ];
 

@@ -32,6 +32,10 @@ const reminders = (function () {
     const container = document.createElement('div');
     container.classList.add('reminder-container');
 
+    const topItems = document.createElement('div');
+    container.appendChild(topItems);
+    topItems.appendChild(createReminder('general', 'textarea'));
+
     const labelInput = document.createElement('input');
     labelInput.setAttribute('placeholder', 'reminder label');
     container.appendChild(labelInput);
@@ -42,17 +46,30 @@ const reminders = (function () {
     container.appendChild(button);
 
     const children = document.createElement('span');
+    children.setAttribute('id', 'reminder-content');
+
+    console.log(localStorage.getItem(children.id));
+    const reminderItems = JSON.parse(localStorage.getItem(children.id)) || []; 
+    console.log(reminderItems);
+
+    if (reminderItems.length > 0){
+        for (let i = 0; i < reminderItems.length; i += 1){
+            children.appendChild(createReminder(reminderItems[i], 'checkbox'));
+        }
+    }
+
     container.appendChild(children);
 
     function getReminderInfo(){
         const label = labelInput.value;
         if (label){
             const newReminder = createReminder(label, 'checkbox');
+
             children.appendChild(newReminder);
+            reminderItems.push(label);
+            localStorage.setItem(children.id, JSON.stringify(reminderItems));
         }
     }
-
-    children.appendChild(createReminder('general', 'textarea'));
 
     button.addEventListener('click', getReminderInfo);
 
