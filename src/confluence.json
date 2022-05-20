@@ -4,39 +4,39 @@
         "ConnectNetwork": [
             {
                 "label": "Call Block Removal",
-                "url": "https://confluence.gtl.net/display/CALL/CN-Blocked+Calls+Removed"
+                "url": "https://confluence.gtl.net/x/rwR2BQ"
             },
             {
                 "label": "Call Block Request",
-                "url": "https://confluence.gtl.net/display/CALL/CN-Blocking+Calls%2C+Facilities%2C+Inmates"
+                "url": "https://confluence.gtl.net/x/TAS5BQ"
             },
             {
                 "label": "Trust Block",
-                "url": "https://confluence.gtl.net/display/CALL/CN+Fraudulent+Blocks"
+                "url": "https://confluence.gtl.net/x/TAS5BQ"
             },
             {
                 "label": "CC Block",
-                "url": "https://confluence.gtl.net/pages/viewpage.action?pageId=91620614"
+                "url": "https://confluence.gtl.net/x/BgV2BQ"
             }
         ],
         "GettingOut": [
             {
                 "label": "Third-party Communication Violation",
-                "url": "https://confluence.gtl.net/display/CALL/GO+-+Third-party+Communication+Violation"
+                "url": "https://confluence.gtl.net/x/k4lZBw"
             },
             {
                 "label": "Phone Block",
-                "url": "https://confluence.gtl.net/display/CALL/GO+-+Phone+Blocks"
+                "url": "https://confluence.gtl.net/x/_QSKBQ"
             },
             {
                 "label": "Canada Block",
-                "url": "https://confluence.gtl.net/display/CALL/Blocks+-+Canada"
+                "url": "https://confluence.gtl.net/x/6AeUBQ"
             }
         ],
         "VisManager": [
             {
                 "label": "Approval Status",
-                "url": "https://confluence.gtl.net/pages/viewpage.action?pageId=93586947"
+                "url": "https://confluence.gtl.net/x/AwaUBQ"
             }
         ]
     },
@@ -45,31 +45,31 @@
         "ConnectNetwork": [
             {
                 "label": "Account Setup",
-                "url": "https://confluence.gtl.net/display/CALL/CN-CPNI+%28Customer+Proprietary+Network+Information%29+Verification"
+                "url": "https://confluence.gtl.net/x/_IrzBQ"
             },
             {
                 "label": "International Account Setup",
-                "url": "https://confluence.gtl.net/display/CALL/CN-AdvancePay+International"
+                "url": "https://confluence.gtl.net/x/twN2BQ"
             },
             {
                 "label": "Attorney/Direct Bill Setup",
-                "url": "https://confluence.gtl.net/display/CALL/CN-Direct+Bill"
+                "url": "https://confluence.gtl.net/x/0wl2BQ"
             }
         ],
         "GettingOut": [
             {
                 "label": "Account Verification",
-                "url": "https://confluence.gtl.net/pages/viewpage.action?pageId=123308376"
+                "url": "https://confluence.gtl.net/x/WIlZBw"
             }
         ],
         "VisManager": [
             {
                 "label": "Duplicate Account",
-                "url": "https://confluence.gtl.net/pages/viewpage.action?pageId=97062071"
+                "url": "https://confluence.gtl.net/x/twzJBQ"
             },
             {
                 "label": "Register a Visitor",
-                "url": "https://confluence.gtl.net/pages/viewpage.action?pageId=92935592"
+                "url": "https://confluence.gtl.net/x/qBWKBQ"
             }
         ]
     },
@@ -78,25 +78,25 @@
         "ConnectNetwork": [
             {
                 "label": "Call Connection Issues",
-                "url": "https://confluence.gtl.net/display/CALL/CN-Call+Connection+Issues"
+                "url": "https://confluence.gtl.net/x/5QN2BQ"
             },
             {
                 "label": "LEC Billing",
-                "url": "https://confluence.gtl.net/display/CALL/CN-LEC+Billing"
+                "url": "https://confluence.gtl.net/x/WAR2BQ"
             },
             {
                 "label": "Dropped Calls",
-                "url": "https://confluence.gtl.net/display/CALL/CN-Dropped+Calls"
+                "url": "https://confluence.gtl.net/x/NAR2BQ"
             }
         ],
         "GettingOut": [
             {
                 "label": "Call Troubleshooting",
-                "url": "https://confluence.gtl.net/display/CALL/GO+-+Troubleshooting"
+                "url": "https://confluence.gtl.net/x/kAh2BQ"
             },
             {
                 "label": "Inmate Call Complaint",
-                "url": "https://confluence.gtl.net/display/CALL/GO+-+Difficulties+Completing+a+Call"
+                "url": "https://confluence.gtl.net/x/9weUBQ"
             }
         ]
     },
@@ -105,34 +105,28 @@
         "ConnectNetwork": [
             {
                 "label": "Dropped Call Credit",
-                "url": "https://confluence.gtl.net/display/CALL/CN-Dropped+Calls"
+                "url": "https://confluence.gtl.net/x/NAR2BQ"
             }
         ],
         "GettingOut": [
             {
                 "label": "Dispute/Credit",
-                "url": "https://confluence.gtl.net/pages/viewpage.action?pageId=123309470"
+                "url": "https://confluence.gtl.net/x/no1ZBw"
             }
         ]
     },
     "Complaint": {
-        "product": ["ConnectNetwork", "GettingOut", "VisManager"],
+        "product": ["ConnectNetwork", "VisManager"],
         "ConnectNetwork": [
             {
                 "label": "Supervisor/Manager Request",
-                "url": "https://confluence.gtl.net/display/CALL/CN-Escalated+Call+Process"
-            }
-        ],
-        "GettingOut": [
-            {
-                "label": "Supervisor/Manager Request",
-                "url": "https://confluence.gtl.net/display/CALL/GO-Escalated+Call+Process"
+                "url": "https://confluence.gtl.net/x/UxDJBQ"
             }
         ],
         "VisManager": [
             {
                 "label": "Supervisor/Manager Request",
-                "url": "https://confluence.gtl.net/display/CALL/VM-Escalated+Call+Process"
+                "url": "https://confluence.gtl.net/x/XhDJBQ"
             }
         ]
     },
@@ -141,7 +135,7 @@
         "GettingOut": [
             {
                 "label": "equifax/incident",
-                "url": "https://confluence.gtl.net/display/CALL/GO-Telmate+Incident+Response+FAQ"
+                "url": "https://confluence.gtl.net/x/PSbJBQ"
             }
         ]
     },
@@ -159,17 +153,17 @@
         "ConnectNetwork": [
             {
                 "label": "Chargeback/G-Funds",
-                "url": "https://confluence.gtl.net/pages/viewpage.action?pageId=91620614"
+                "url": "https://confluence.gtl.net/x/BgV2BQ"
             },
             {
                 "label": "Fraud Report",
-                "url": "https://confluence.gtl.net/pages/viewpage.action?pageId=91620614"
+                "url": "https://confluence.gtl.net/x/BgV2BQ"
             }
         ],
         "GettingOut": [
             {
                 "label": "Fraud Flag",
-                "url": "https://confluence.gtl.net/display/CALL/GO+-+Fraud+Flag"
+                "url": "https://confluence.gtl.net/x/CQWKBQ"
             }
         ]
     }, 
@@ -178,7 +172,7 @@
         "GettingOut": [
             {
                 "label": "IVR Inquiry",
-                "url": "https://confluence.gtl.net/display/CALL/GO+-+IVR+Prompts"
+                "url": "https://confluence.gtl.net/x/f4pZBw"
             }
         ]
     },
@@ -187,13 +181,13 @@
         "ConnectNetwork": [
             {
                 "label": "Missing Kiosk Payment",
-                "url": "https://confluence.gtl.net/display/CALL/CN-Missing+Payments"
+                "url": "https://confluence.gtl.net/x/8Al2BQ"
             }
         ],
         "GettingOut": [
             {
                 "label": "Kiosk Inquiry",
-                "url": "https://confluence.gtl.net/display/CALL/GO+-+Kiosks"
+                "url": "https://confluence.gtl.net/x/Iwh2BQ"
             }
         ]
     },
@@ -202,13 +196,13 @@
         "ConnectNetwork": [
             {
                 "label": "Messaging",
-                "url": "https://confluence.gtl.net/display/CALL/CN-Connect+Network+Messaging"
+                "url": "https://confluence.gtl.net/x/1QR2BQ"
             }
         ],
         "GettingOut": [
             {
                 "label": "Messaging",
-                "url": "https://confluence.gtl.net/display/CALL/GO+-+Messaging"
+                "url": "https://confluence.gtl.net/x/DotZBw"
             }
         ]
     },
@@ -217,39 +211,39 @@
         "ConnectNetwork": [
             {
                 "label": "Settlement Minutes",
-                "url": "https://confluence.gtl.net/display/CALL/CN-Settlement+Minutes"
+                "url": "https://confluence.gtl.net/x/dS6jBg"
             },
             {
                 "label": "CCPA (California Privacy Inquiry)",
-                "url": "https://confluence.gtl.net/pages/viewpage.action?pageId=93585771"
+                "url": "https://confluence.gtl.net/x/awGUBQ"
             }
         ],
         "GettingOut": [
             {
                 "label": "CCPA (California Privacy Inquiry)",
-                "url": "https://confluence.gtl.net/pages/viewpage.action?pageId=97059342"
+                "url": "https://confluence.gtl.net/x/DgLJBQ"
             }
         ],
         "VisManager": [
             {
                 "label": "CCPA (California Privacy Inquiry)",
-                "url": "https://confluence.gtl.net/pages/viewpage.action?pageId=97059348"
+                "url": "https://confluence.gtl.net/x/FALJBQ"
             },
             {
                 "label": "Add/Remove a Visitor",
-                "url": "https://confluence.gtl.net/pages/viewpage.action?pageId=99862097"
+                "url": "https://confluence.gtl.net/x/UcbzBQ"
             },
             {
                 "label": "Cancel a Visit",
-                "url": "https://confluence.gtl.net/pages/viewpage.action?pageId=92935559"
+                "url": "https://confluence.gtl.net/x/tyrJBQ"
             },
             {
                 "label": "Rate/Time Inquiry",
-                "url": "https://confluence.gtl.net/pages/viewpage.action?pageId=97069696"
+                "url": "https://confluence.gtl.net/x/gCrJBQ"
             },
             {
                 "label": "Refund/Replace Visit",
-                "url": "https://confluence.gtl.net/pages/viewpage.action?pageId=92935494"
+                "url": "https://confluence.gtl.net/x/RhWKBQ"
             }
         ]
     },
@@ -258,41 +252,45 @@
         "ConnectNetwork": [
             {
                 "label": "Payment Decline",
-                "url": "https://confluence.gtl.net/display/CALL/CN-Payment+Declines"
+                "url": "https://confluence.gtl.net/x/Ggp2BQ"
             },
             {
                 "label": "Authorized User Payment",
-                "url": "https://confluence.gtl.net/display/CALL/CN-Authorized+User"
+                "url": "https://confluence.gtl.net/x/xAN2BQ"
             },
             {
                 "label": "Canada Payment",
-                "url": "https://confluence.gtl.net/display/CALL/CN-AdvancePay+International"
+                "url": "https://confluence.gtl.net/x/twN2BQ"
+            },
+            {
+                "label": "AdvancePay Deposit",
+                "url": "https://confluence.gtl.net/x/wQN2BQ"
             }
         ],
         "GettingOut": [
             {
                 "label": "Prepaid Deposit",
-                "url": "https://confluence.gtl.net/display/CALL/GO+-+Prepaid+Deposit"
+                "url": "https://confluence.gtl.net/x/-ohZBw"
             },
             {
                 "label": "Trust Deposit",
-                "url": "https://confluence.gtl.net/display/CALL/GO+-+Trust+Deposit"
+                "url": "https://confluence.gtl.net/x/JYlZBw"
             },
             {
                 "label": "Bail Deposit",
-                "url": "https://confluence.gtl.net/display/CALL/GO+-+Bail+Deposit"
+                "url": "https://confluence.gtl.net/x/O4lZBw"
             },
             {
                 "label": "Large Deposit",
-                "url": "https://confluence.gtl.net/display/CALL/GO+-+Large+Deposit+Policy"
+                "url": "https://confluence.gtl.net/x/mQSKBQ"
             },
             {
-                "label": "Deposit",
-                "url": "https://confluence.gtl.net/display/CALL/Deposits"
+                "label": "Canada Deposit",
+                "url": "https://confluence.gtl.net/x/uweUBQ"
             },
             {
                 "label": "Deposit Issue",
-                "url": "https://confluence.gtl.net/display/CALL/GO+-+Deposit+Error+Messages"
+                "url": "https://confluence.gtl.net/x/4otZBw"
             }
         ]
     },
@@ -301,77 +299,77 @@
         "ConnectNetwork": [
             {
                 "label": "APOC Call Inquiry",
-                "url": "https://confluence.gtl.net/pages/viewpage.action?pageId=91620448"
+                "url": "https://confluence.gtl.net/x/YAR2BQ"
             },
             {
                 "label": "Community Corrections",
-                "url": "https://confluence.gtl.net/display/CALL/CN-Community+Corrections"
+                "url": "https://confluence.gtl.net/x/jgR2BQ"
             },
             {
                 "label": "Debit Link",
-                "url": "https://confluence.gtl.net/display/CALL/CN-Debit+Link+Units"
+                "url": "https://confluence.gtl.net/x/lgR2BQ"
             },
             {
                 "label": "PIN Debit",
-                "url": "https://confluence.gtl.net/display/CALL/CN-PIN+Debit"
+                "url": "https://confluence.gtl.net/x/wwl2BQ"
             },
             {
                 "label": "Trust Fund",
-                "url": "https://confluence.gtl.net/display/CALL/CN-Trust+Fund"
+                "url": "https://confluence.gtl.net/x/NwV2BQ"
             },
             {
                 "label": "Missing Payment",
-                "url": "https://confluence.gtl.net/display/CALL/CN-Missing+Payments"
+                "url": "https://confluence.gtl.net/x/8Al2BQ"
             },
             {
                 "label": "Payment Methods",
-                "url": "https://confluence.gtl.net/display/CALL/CN-Payment+Methods"
+                "url": "https://confluence.gtl.net/x/CwV2BQ"
             },
             {
                 "label": "Auto Reload",
-                "url": "https://confluence.gtl.net/display/CALL/CN-Auto+Reload"
+                "url": "https://confluence.gtl.net/x/lAC5BQ"
             },
             {
                 "label": "Funds Transfer",
-                "url": "https://confluence.gtl.net/display/CALL/CN-Funds+Transfer"
+                "url": "https://confluence.gtl.net/x/SwR2BQ"
             },
             {
                 "label": "Expired Funds/Write-off",
-                "url": "https://confluence.gtl.net/pages/viewpage.action?pageId=91620415"
+                "url": "https://confluence.gtl.net/x/PwR2BQ"
             },
             {
                 "label": "International Payment Inquiry",
-                "url": "https://confluence.gtl.net/display/CALL/CN-AdvancePay+International"
+                "url": "https://confluence.gtl.net/x/twN2BQ"
             }
         ],
         "GettingOut": [
             {
                 "label": "Inactive Funds",
-                "url": "https://confluence.gtl.net/display/CALL/GO+-+Inactive+Funds"
+                "url": "https://confluence.gtl.net/x/LIpZBw"
             },
             {
                 "label": "Funds Transfer",
-                "url": "https://confluence.gtl.net/display/CALL/GO+-+Transfers"
+                "url": "https://confluence.gtl.net/x/RItZBw"
             },
             {
                 "label": "Collect/Quick Connect Charge",
-                "url": "https://confluence.gtl.net/pages/viewpage.action?pageId=123308681"
+                "url": "https://confluence.gtl.net/x/iYpZBw"
             },
             {
                 "label": "Voicemail",
-                "url": "https://confluence.gtl.net/display/CALL/GO+-+Voicemail"
+                "url": "https://confluence.gtl.net/x/qwSKBQ"
             },
             {
                 "label": "Canada Large Deposit",
-                "url": "https://confluence.gtl.net/display/CALL/Canada+Large+Deposit+Policy"
+                "url": "https://confluence.gtl.net/x/9AeUBQ"
             },
             {
                 "label": "Call Bundle",
-                "url": "https://confluence.gtl.net/display/CALL/GO+CN+-+Call+Bundles"
+                "url": "https://confluence.gtl.net/x/-geUBQ"
             },
             {
-                "label": "Bailout",
-                "url": "https://confluence.gtl.net/display/CALL/GO-Bail+Out"
+                "label": "Bail Deposit",
+                "url": "https://confluence.gtl.net/x/O4lZBw"
             }
         ]
     },
@@ -389,7 +387,7 @@
         "ConnectNetwork": [
             {
                 "label": "Rates",
-                "url": "https://confluence.gtl.net/display/CALL/CN-Rates"
+                "url": "https://confluence.gtl.net/x/tAl2BQ"
             }
         ]
     },
@@ -398,25 +396,25 @@
         "ConnectNetwork": [
             {
                 "label": "Refund",
-                "url": "https://confluence.gtl.net/display/CALL/CN-Refund%2C+Account+Closure%2C+Void"
+                "url": "https://confluence.gtl.net/x/IAl2BQ"
             },
             {
                 "label": "Account Closure",
-                "url": "https://confluence.gtl.net/display/CALL/CN-Refund%2C+Account+Closure%2C+Void"
+                "url": "https://confluence.gtl.net/x/IAl2BQ"
             },
             {
                 "label": "Void",
-                "url": "https://confluence.gtl.net/display/CALL/CN-Refund%2C+Account+Closure%2C+Void"
+                "url": "https://confluence.gtl.net/x/IAl2BQ"
             }
         ],
         "GettingOut": [
             {
                 "label": "Refund",
-                "url": "https://confluence.gtl.net/pages/viewpage.action?pageId=123308694"
+                "url": "https://confluence.gtl.net/x/lopZBw"
             },
             {
                 "label": "Void",
-                "url": "https://confluence.gtl.net/pages/viewpage.action?pageId=123308694"
+                "url": "https://confluence.gtl.net/x/lopZBw"
             }
         ]
     },
@@ -425,19 +423,19 @@
         "VisManager": [
             {
                 "label": "Schedule Visit",
-                "url": "https://confluence.gtl.net/pages/viewpage.action?pageId=97069696"
+                "url": "https://confluence.gtl.net/x/gCrJBQ"
             },
             {
                 "label": "Reschedule Visit",
-                "url": "https://confluence.gtl.net/pages/viewpage.action?pageId=92935492"
+                "url": "https://confluence.gtl.net/x/RBWKBQ"
             },
             {
                 "label": "Schedule Visit (Kisok)",
-                "url": "https://confluence.gtl.net/pages/viewpage.action?pageId=92935491"
+                "url": "https://confluence.gtl.net/x/QxWKBQ"
             },
             {
                 "label": "Schedule Visit (Visitor)",
-                "url": "https://confluence.gtl.net/pages/viewpage.action?pageId=99861430"
+                "url": "https://confluence.gtl.net/x/tsPzBQ"
             }
         ]
     },
@@ -446,13 +444,13 @@
         "ConnectNetwork": [
             {
                 "label": "Unlocking Inmate Tablet",
-                "url": "https://confluence.gtl.net/display/CALL/CN-Unlocking+Tablets"
+                "url": "https://confluence.gtl.net/x/tAC5BQ"
             }
         ],
         "GettingOut": [
             {
                 "label": "Tablet Facility",
-                "url": "https://confluence.gtl.net/display/CALL/GO+-+Tablet+Facilities"
+                "url": "https://confluence.gtl.net/x/XAh2BQ"
             }
         ]
     },
@@ -461,7 +459,7 @@
         "ConnectNetwork": [
             {
                 "label": "Unlimited Calling",
-                "url": "https://confluence.gtl.net/pages/viewpage.action?pageId=91621894https://confluence.gtl.net/pages/viewpage.action?pageId=91621894"
+                "url": "https://confluence.gtl.net/x/Bgp2BQ"
             }
         ]
     },
@@ -479,7 +477,7 @@
         "VisManager": [
             {
                 "label": "VisBridge Troubleshooting",
-                "url": "https://confluence.gtl.net/pages/viewpage.action?pageId=97069593"
+                "url": "https://confluence.gtl.net/x/GSrJBQ"
             }
         ]
     },
@@ -488,21 +486,21 @@
         "ConnectNetwork": [
             {
                 "label": "Video Visitation",
-                "url": "https://confluence.gtl.net/display/CALL/CN-Video+Visitation"
+                "url": "https://confluence.gtl.net/x/Wgp2BQ"
             }
         ], 
         "GettingOut": [
             {
                 "label": "Video Visitation",
-                "url": "https://confluence.gtl.net/display/CALL/GO+-+Video+Visitation"
+                "url": "https://confluence.gtl.net/x/E4tZBw"
             },
             {
                 "label": "Visitation",
-                "url": "https://confluence.gtl.net/display/CALL/GO+-+Visitation"
+                "url": "https://confluence.gtl.net/x/0YpZBw"
             },
             {
                 "label": "T-Phone Visitation",
-                "url": "https://confluence.gtl.net/display/CALL/GO+-+T-Phone+Visit+Facilities"
+                "url": "https://confluence.gtl.net/x/Swh2BQ"
             }
         ]
     },
@@ -511,15 +509,15 @@
         "VisManager": [
             {
                 "label": "Transcoding Error",
-                "url": "https://confluence.gtl.net/pages/viewpage.action?pageId=99844660"
+                "url": "https://confluence.gtl.net/x/NILzBQ"
             },
             {
                 "label": "Station Issue",
-                "url": "https://confluence.gtl.net/display/CALL/VM-Troubleshooting+a+Station"
+                "url": "https://confluence.gtl.net/x/8irJBQ"
             },
             {
                 "label": "At Home Visit Issue",
-                "url": "https://confluence.gtl.net/display/CALL/VM-Troubleshooting+at+Home+Visits"
+                "url": "https://confluence.gtl.net/x/rxWKBQ"
             }
         ]
     },
@@ -528,51 +526,47 @@
         "ConnectNetwork": [
             {
                 "label": "Web Account Creation",
-                "url": "https://confluence.gtl.net/display/CALL/CN-Connect+Network+Account+Setup"
+                "url": "https://confluence.gtl.net/x/FwR2BQ"
             },
             {
                 "label": "Request2Call",
-                "url": "https://confluence.gtl.net/display/CALL/CN-Request2Call"
+                "url": "https://confluence.gtl.net/x/2wzJBQ"
             },
             {
                 "label": "Password Reset",
-                "url": "https://confluence.gtl.net/pages/viewpage.action?pageId=91620676"
+                "url": "https://confluence.gtl.net/x/RAV2BQ"
             }
         ],
         "GettingOut": [
             {
                 "label": "Photos",
-                "url": "https://confluence.gtl.net/display/CALL/GO+-+Photos"
+                "url": "https://confluence.gtl.net/x/EItZBw"
             },
             {
                 "label": "Online Transfer",
-                "url": "https://confluence.gtl.net/display/CALL/GO+-+Transfers+Online"
+                "url": "https://confluence.gtl.net/x/nItZBw"
             },
             {
                 "label": "Mobile App Inquiry",
-                "url": "https://confluence.gtl.net/display/CALL/GO+-+Mobile+Apps"
-            },
-            {
-                "label": "Verification via Email",
-                "url": "https://confluence.gtl.net/display/CALL/GO+-+Verification+Process+Received+Via+Email"
+                "url": "https://confluence.gtl.net/x/MQh2BQ"
             },
             {
                 "label": "Online Account",
-                "url": "https://confluence.gtl.net/pages/viewpage.action?pageId=91621381"
+                "url": "https://confluence.gtl.net/x/BQh2BQ"
             }
         ],
         "VisManager": [
             {
                 "label": "Password Reset",
-                "url": "https://confluence.gtl.net/pages/viewpage.action?pageId=99862115"
+                "url": "https://confluence.gtl.net/x/Y8bzBQ"
             },
             {
                 "label": "App Installation",
-                "url": "https://confluence.gtl.net/pages/viewpage.action?pageId=96010459"
+                "url": "https://confluence.gtl.net/x/2wC5BQ"
             },
             {
                 "label": "Visitation Instructions",
-                "url": "https://confluence.gtl.net/pages/viewpage.action?pageId=99861430"
+                "url": "https://confluence.gtl.net/x/tsPzBQ"
             }
         ]
     }
