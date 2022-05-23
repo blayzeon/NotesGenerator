@@ -8,19 +8,29 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="popup-div" class="hidden">Copied</div>
-    <nav class="margin-bottom"></nav>
-    <section class="main-content">
-        <div class="container">
-            <div id="main-left"></div>
-            <div id="main-right"></div>
-        </div>
-    </section>
-    <footer class="margin-top">
-        <p>version <span id="version-number"></span></p>
-    </footer>
-    <datalist id="fac-list"></datalist>
-    <datalist id="issue-list"></datalist>
+    <div class="container">
+        <nav class="margin-bottom">
+            <div>
+                <label for="rep">Rep: </label>
+                <input id="rep" type="text" placeholder="your full name">
+            </div>
+            <div>
+                <label for="product">Product: </label>
+                <select id="product">
+                    <option value="none"></option>
+                    <option value="ConnectNetwork">ConnectNetwork</option>
+                    <option value="GettingOut">GettingOut</option>
+                    <option value="VisManager">VisManager</option>
+                </select>
+            </div>
+        </nav>
+        <main></main>
+        <footer class="margin-top">
+            <p>version <span id="version-number"></span></p>
+        </footer>
+        <datalist id="fac-list"></datalist>
+        <datalist id="issue-list"></datalist>
+    </div>
     <script src="main.js"></script>
 </body>
 </html> 
