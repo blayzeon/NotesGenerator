@@ -12,25 +12,55 @@
 const version = document.getElementById('version-number');
 version.innerText = '2.20523';
 
+// issue is at [1]
+// resolution is at [3]
+const baseForm = [
+    {
+        elm: "textarea",
+        placeholder: "scratchpad for jotting notes",
+    },
+    {
+        label: "issue",
+        type: "text",
+        elm: "input",
+        placeholder: "the reason for the customer's call",
+        datalist: false,
+        forNote: true
+    },
+    {
+        label: "name",
+        type: "text",
+        elm: "input",
+        placeholder: "enter the customer's full name",
+        datalist: false,
+        forNote: true
+    },
+    {
+        label: "resolution",
+        type: "text",
+        elm: "input",
+        placeholder: "the resolution you provided",
+        datalist: false,
+        forNote: true
+    }    
+];
+
 const generateNoteForm = require('./notes.js');
-const notes = generateNoteForm();
+const notes = generateNoteForm(baseForm);
 
 // note form
 const container = document.querySelector('main');
-container.appendChild(notes);
-
-function copyStr(str){
-    const copyArea = document.createElement('textarea');
-    copyArea.value = str;
-    copyArea.setAttribute('readonly', '');
-    document.body.appendChild(copyArea);
-    copyArea.select();
-    document.execCommand('copy');
-    copyArea.remove();
+container.appendChild(notes.form);
+const cnItem = {
+    label: "passcode",
+    type: "text",
+    elm: "input",
+    placeholder: "the customer's 4-to-8 digit passcode",
+    datalist: false,
+    forNote: true
 }
 
-
-
+notes.addItem(cnItem);
 
 // top bar
 const navLinks = [

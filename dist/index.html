@@ -9,14 +9,14 @@
 </head>
 <body>
     <div class="container">
-        <nav class="margin-bottom">
+        <nav>
             <div>
                 <label for="rep">Rep: </label>
-                <input id="rep" type="text" placeholder="your full name">
+                <input id="rep" type="text" placeholder="your first and last name" required="true">
             </div>
             <div>
                 <label for="product">Product: </label>
-                <select id="product">
+                <select id="product" required="true">
                     <option value="none"></option>
                     <option value="ConnectNetwork">ConnectNetwork</option>
                     <option value="GettingOut">GettingOut</option>
@@ -25,7 +25,7 @@
             </div>
         </nav>
         <main></main>
-        <footer class="margin-top">
+        <footer>
             <p>version <span id="version-number"></span></p>
         </footer>
         <datalist id="fac-list"></datalist>
