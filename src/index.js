@@ -51,16 +51,113 @@ const notes = generateNoteForm(baseForm);
 // note form
 const container = document.querySelector('main');
 container.appendChild(notes.form);
-const cnItem = {
-    label: "passcode",
-    type: "text",
-    elm: "input",
-    placeholder: "the customer's 4-to-8 digit passcode",
-    datalist: false,
-    forNote: true
+
+// dynamic form 
+const product = document.querySelector('#product');
+function checkFormForValue() {
+    const form = document.querySelector('form');
+    const inputs = form.querySelectorAll('input');
+    inputs.forEach((input) => {
+        if (input.value) {
+            a = confirm('Changing the product may reset the form.  Continue?');
+            if (!a) {
+                product.value === "";
+                return false;
+            } else {
+                return true;
+            }
+        }
+    });
+
+    return false;
 }
 
-notes.addItem(cnItem);
+function cleanFormOfProductIssues() {
+    document.querySelectorAll('data-product').forEach((elm) => {
+        elm.remove();
+    });
+}
+
+function changeFormProduct(product) {
+    cleanFormOfProductIssues();
+
+    const itemsToAdd = [];
+
+    if (product === "ConnectNetwork") {
+        itemsToAdd.push({
+            label: "passcode",
+            type: "text",
+            elm: "input",
+            placeholder: "the customer's 4-to-8 digit passcode",
+            datalist: false,
+            forNote: true,
+            data: ['data-product', 'cn']
+        });
+    } else if (product === "GettingOut") {
+        itemsToAdd.push({
+            label: "email",
+            type: "text",
+            elm: "input",
+            placeholder: "the customer's email address",
+            datalist: false,
+            forNote: false,
+            data: ['data-product', 'go']
+        },
+        {
+            label: "inmate",
+            type: "text",
+            elm: "input",
+            placeholder: "the inmate's first and last name",
+            datalist: false,
+            forNote: false,
+            data: ['data-product', 'go']
+        })
+    } else if (product === "VisManager") {
+        itemsToAdd.push({
+            label: "dob",
+            type: "text",
+            elm: "input",
+            placeholder: "the customer's date of birth",
+            datalist: false,
+            forNote: false,
+            data: ['data-product', 'vm']
+        },
+        {
+            label: "id",
+            type: "text",
+            elm: "input",
+            placeholder: "the inmate's id number",
+            datalist: false,
+            forNote: false,
+            data: ['data-product', 'vm']
+        });
+    } else {
+        return;
+    }
+
+    itemsToAdd.forEach((item) => {
+        notes.addItem(item);
+    });
+}
+
+product.addEventListener('change', ()=> {
+    const willFormReset = checkFormForValue();
+
+    if (willFormReset) {
+        return;
+    }
+    
+    if (product.value === "ConnectNetwork") {
+        
+    } else if (product.value === "GettingOut") {
+
+    } else {
+
+    }
+
+    console.log(product)
+});
+
 
 // top bar
 const navLinks = [

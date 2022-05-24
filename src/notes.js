@@ -78,7 +78,7 @@ function copyContents(coords, elm, container) {
 }
 
 // create the form
-function generateNoteForm(formTemplate, afterEach, beforeEach, beginning, ending) {
+function generateNoteForm(formTemplate) {
     const form = document.createElement('form');
     form.setAttribute('id', 'form-container');
 
@@ -113,13 +113,17 @@ function generateNoteForm(formTemplate, afterEach, beforeEach, beginning, ending
             input.setAttribute('data-note', 'true');
         }
 
+        if (item.data) {
+            input.setAttribute(item.data[0], item.data[1]);
+        }
+
         container.appendChild(input);
         
         // we don't want containers if there is no label
         const toAppend = item.label ? container : input;
 
         if (document.querySelector('#form-container')) {
-            const children = Array.from(form.querySelectorAll('textarea'));
+            const children = Array.from(form.querySelectorAll('div'));
             lastChild = children[children.length-1];
             form.insertBefore(toAppend, lastChild);
         } else {
