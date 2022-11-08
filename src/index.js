@@ -410,10 +410,6 @@ const navLinks = [
             url: 'https://command-center.telmate.com/ui#/main',
         },
         {
-            label: 'wiki',
-            url: 'https://sites.google.com/a/intelmate.com/telmate-general-customer-care/?pli=1',
-        },
-        {
             label: 'moneygram',
             url: 'https://online.moneygram.com/ExpressPaymentIPN/adhocQuery.do?r=t#results',
         },
